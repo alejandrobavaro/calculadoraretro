@@ -1,0 +1,49 @@
+.main-content-container {
+  width: 100%;
+  overflow: hidden;
+
+  background-size: cover;
+}
+
+.main-content-container .content-wrapper {
+  margin: 0 auto;
+  padding: 15px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para animaciones de hojas */
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../../public/img/04-img-banners/banner10.png');
+  background-size: contain;
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50px) translateX(20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) translateX(40px) rotate(0deg);
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .main-content-container .content-wrapper {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content-container .content-wrapper {
+    padding: 5px;
+  }
+}

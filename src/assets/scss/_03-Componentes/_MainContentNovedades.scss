@@ -1,0 +1,70 @@
+.main-content-novedades {
+  width: 100%;
+  overflow: hidden;
+
+}
+
+/* Estilos para el carrusel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(76, 175, 80, 0.5);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s ease;
+
+      &.active {
+        background: #4caf50;
+      }
+    }
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-carousel {
+    height: 200px;
+  }
+}
