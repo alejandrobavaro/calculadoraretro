@@ -1,112 +1,53 @@
 .trademarkGondraFooter {
   text-align: center;
   margin: 0;
-  padding: 20px 0;
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0px 0;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .textoFooterAutor {
-  border-radius: 8px;
+  border-radius: 20px;
   width: 100%;
-  padding: 20px;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  color: #495057;
-  margin-bottom: 20px;
+  padding: 0px;
+  color: #ffffff;
 }
 
-.gridPadreProductosGondraFooter1 {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  padding: 15px;
-  border-radius: 8px;
-  width: 100%;
+.footer-dev-link {
+  text-decoration: none;
+  transition: all 0.3s ease;
 
-}
+  &:hover {
+    .textoFooterGondraWorld {
+      color: #b2f6ff;
+      transform: scale(1.1) rotate(-2deg);
+    }
 
-.texto-principal {
-  font-size: 16px;
-  color: #4a6fa5;
-  margin-bottom: 10px;
-  font-weight: 500;
+    .diamond-icon {
+      animation: spin 1s linear infinite;
+      color: #00d0ff;
+    }
+  }
 }
 
 .textoFooterGondraWorld {
-  font-size: 14px;
-  transition: transform 0.2s ease;
-  color: #6c757d;
-
-  &:hover {
-    transform: scale(1.05);
-    color: #4a6fa5;
-  }
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.texto-secundario {
-  font-size: 14px;
-  color: #6c757d;
-  margin-left: 10px;
+.diamond-icon {
+  color: #afcfd4;
+  font-size: 16px;
+  transition: all 0.5s ease;
 }
 
-.imagen-limitada8 {
-  max-width: 120px;
-  height: auto;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-.objetoCentrado1 {
-  display: block;
-  margin: 0 auto;
-}
-
-hr {
-  margin: 20px 0;
-  border: none;
-  border-top: 1px solid #e0e0e0;
-}
-
-@media (max-width: 768px) {
-  .texto-principal {
-    font-size: 15px;
-  }
-
-  .texto-secundario {
-    font-size: 14px;
-  }
-
-  .imagen-limitada8 {
-    max-width: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .texto-principal {
-    font-size: 14px;
-  }
-
-  .texto-secundario {
-    font-size: 13px;
-  }
-
-  .imagen-limitada8 {
-    max-width: 80px;
-  }
-
-  .gridPadreProductosGondraFooter1 {
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-
-  .textoFooterAutor {
-    padding: 15px;
-    margin-top: 0;
-  }
+/* Animación de giro */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

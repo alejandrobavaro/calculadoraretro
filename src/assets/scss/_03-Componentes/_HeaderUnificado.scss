@@ -1,106 +1,86 @@
-/*--------------Estilos del Header Principal--------------*/
-.header-unificado {
-  background-color: #ffffff;
-  padding: 0.75rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #e9ecef;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap');
+
+
+.header-unificado-minimal {
+  background: #fff;
+  padding: 5px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.contenedor-header {
+.contenedor-header-minimal {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1400px;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 1rem;
+  padding: 0 15px;
 }
 
-.logo-y-dolar {
+.logo-img-minimal {
+  height: 30px;
+  width: auto;
+}
+
+.dolarito-link {
+  margin: 0 15px;
+  
+  .external-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #e6f2ff;
+    }
+  }
+}
+
+.logo-minimal {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-}
+  gap: 8px;
 
-.logo img.logo-img {
-  height: 40px;
-  width: auto;
-  transition: opacity 0.2s ease;
-}
-
-.logo img.logo-img:hover {
-  opacity: 0.9;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.nav-links a {
-  color: #495057;
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #0d6efd;
-  background-color: rgba(13, 110, 253, 0.1);
-}
-
-.nav-links a.activo {
-  color: #0d6efd;
-  background-color: rgba(13, 110, 253, 0.05);
-  font-weight: 600;
-}
-
-.acciones-header .btn {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.9rem;
-}
-
-/*--------------Responsive--------------*/
-@media (max-width: 768px) {
-  .contenedor-header {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 0.5rem;
-  }
-
-  .logo-y-dolar {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    justify-content: flex-start;
-  }
-
-  .nav-links a {
+  .titulo-retro {
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
-    white-space: nowrap;
+    color: #0e276d;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 }
 
-@media (min-width: 1024px) {
-  .nav-links {
-    gap: 1rem;
-  }
 
-  .nav-links a {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+.nav-links-minimal {
+  display: flex;
+  gap: 15px;
+  
+  a {
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #f5f5f5;
+    }
+    
+    &.activo {
+      color: #0066cc;
+      background: #e6f2ff;
+    }
+    
+    &.external-link {
+      color: #0066cc;
+      
+      &:hover {
+        background: #e6f2ff;
+      }
+    }
   }
 }
