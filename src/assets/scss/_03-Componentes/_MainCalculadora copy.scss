@@ -1,0 +1,267 @@
+/* Estilos base - Mobile First */
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // background-color: rgba(14, 16, 131, 0.459);
+  box-shadow: 0 2px 10px #0000001a;
+  filter: drop-shadow(0 0 15px rgba(9, 16, 112, 0.493));
+  transition: filter 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin: 0 auto;
+}
+
+.calculator-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Pantalla */
+.calculator-display {
+  width: 100%;
+  background-color: #495057;
+  padding: 10px;
+  border-radius: 6px;
+
+  .outer-display-container {
+    background-color: #e9ecef;
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  .inner-display-container {
+    background-color: #dee2e6;
+    border-radius: 4px;
+    padding: 5px;
+
+    .display {
+      width: 100%;
+      height: 60px;
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      color: #495057;
+      font-size: 1.5rem;
+      text-align: right;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      padding: 0 8px;
+    }
+  }
+}
+
+/* Botón logo */
+.buttonlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+
+  img {
+    max-width: 60%;
+    max-height: 50%;
+    object-fit: contain;
+  }
+}
+
+/* Grid de botones - MANTIENE EXACTAMENTE EL ORDEN ORIGINAL */
+.calculator-buttons {
+  margin-top: 15px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+
+  .button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    min-height: 50px;
+
+    /* Estilos específicos para cada tipo de botón */
+    &.number {
+      background-color: #495057;
+      color: white;
+    }
+
+    &.operator {
+      background-color: #e9ecef;
+      color: #212529;
+    }
+
+    &.special {
+      background-color: #ced4da;
+      color: #212529;
+    }
+
+    &.specialComa {
+      background-color: white;
+      color: #212529;
+      border: 1px solid #ced4da;
+    }
+
+    /* Botones que ocupan múltiples celdas */
+    &.simbolocombinado {
+      background-color: white;
+      grid-row: span 1;
+      color: #212529;
+      border: 1px solid #ced4da;
+    }
+
+    &.simbolocombinado2 {
+      grid-column: span 2;
+    }
+
+    &.clear {
+      background-color: #fd7e14;
+      color: white;
+    }
+
+    /* Estados interactivos */
+    &:hover,
+    &.active {
+      background-color: #4a6fa5;
+      color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Historial */
+.calculator-history {
+  width: 100%;
+  background: #f8f9fa;
+  text-align: left;
+  color: #495057;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  border-top: 1px solid #e0e0e0;
+
+  .tituloCalculadora {
+    color: #4a6fa5;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+
+  .history-list {
+    list-style-type: none;
+    padding-left: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+
+    .history-item {
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+/* Texto de atajos */
+.textoAtajosTeclado {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  font-size: 0.8rem;
+  color: #6c757d;
+  text-align: left;
+}
+
+/* Media Queries - Tablet (768px) */
+@media (min-width: 768px) {
+  .calculator-container {
+    flex-direction: row;
+    padding: 15px;
+  }
+
+  .calculator-buttons {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    
+    .button {
+      padding: 12px;
+      font-size: 1.1rem;
+      min-height: 55px;
+      
+      &.simbolocombinado {
+        grid-row: span 2;
+      }
+    }
+  }
+
+  .calculator-history {
+    width: 250px;
+    margin-top: 0;
+    margin-left: 15px;
+    border-top: none;
+    border-left: 1px solid #e0e0e0;
+    max-height: 500px;
+  }
+
+  .calculator-display .display {
+    height: 70px;
+    font-size: 1.8rem;
+  }
+
+  .textoAtajosTeclado {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+}
+
+/* Media Queries - Desktop (1024px) */
+@media (min-width: 1024px) {
+  .calculator-container {
+    max-width: 900px;
+    padding: 20px;
+  }
+
+  .calculator-buttons {
+    gap: 10px;
+    
+    .button {
+      font-size: 1.2rem;
+      min-height: 60px;
+    }
+  }
+
+  .calculator-history {
+    width: 300px;
+    max-height: 670px;
+  }
+
+  .textoAtajosTeclado {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
